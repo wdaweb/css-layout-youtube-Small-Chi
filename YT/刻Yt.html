@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      font-family: "微軟正黑體";
+      color: black;
+      background: white;
+      overflow-y: scroll;
+    }
+
+
+    .search {
+      width: 100%;
+      height: 60px;
+      background: rgb(250, 249, 249);
+      border-bottom: 1px solid rgb(239, 238, 238);
+      position: fixed;
+      left: 0;
+      top: 0;
+      transform: translateX(0px);
+      z-index: 1;
+    }
+
+    .search2 {
+      width: 100%;
+      height: 60px;
+      background: rgb(250, 249, 249);
+      border-bottom: 1px solid rgb(239, 238, 238);
+      position: fixed;
+      left: 0;
+      top: 61px;
+      transform: translateX(0px);
+      z-index: 1;
+    }
+
+    .insearch1 {
+      width: 60%;
+      height: 60px;
+      background: rgb(250, 249, 249);
+      position: relative;
+      text-align: center;
+      line-height: 60px;
+      margin: auto;
+    }
+
+    ul {
+      width: 100%;
+      height: 60px;
+      background: rgb(250, 249, 249);
+      position: relative;
+      text-align: center;
+      line-height: 60px;
+      margin: auto;
+    }
+
+
+    li {
+      height: 30px;
+      border-radius: 20px;
+      background: rgb(245, 245, 245);
+      color: black;
+      border: 1px solid rgb(222, 221, 221);
+      font-size: 14px;
+      text-align: center;
+      line-height: 30px;
+      padding: 0 12px 0 12px;
+      margin: auto 3px;
+      display: inline-block;
+
+    }
+
+    .input {
+      width: 60%;
+      height: 38px;
+      border: 1px solid rgb(203, 202, 202);
+      color: rgb(203, 202, 202);
+      border-radius: 2px;
+      line-height: 60px;
+      position: relative;
+      left: 0px;
+      top: 0px;
+    }
+
+    .magnifier {
+      width: 65px;
+      height: 40px;
+      display: inline-block;
+      border: 1px solid rgb(203, 202, 202);
+      border-radius: 2px;
+      background: rgb(245, 245, 245);
+      position: relative;
+      text-align: center;
+      line-height: 50px;
+      top: 6.2px;
+      right: 6px;
+    }
+
+    .mic {
+      display: inline-block;
+      background: rgb(245, 245, 245);
+      position: relative;
+      left: 0px;
+      top: 6.2px;
+      line-height: 48px;
+    }
+
+
+    .threeLine {
+      position: fixed;
+      left: 20px;
+      top: 10px;
+      line-height: 42px;
+      z-index: 1;
+    }
+
+    .YTlogo {
+      width: 250px;
+      height: 56px;
+      background: white;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 2;
+    }
+
+    .logo {
+      width: 90px;
+      height: 20px;
+      position: fixed;
+      left: 75px;
+      top: 19px;
+      z-index: 1;
+    }
+
+    .TW {
+      color: rgb(109, 109, 109);
+      font-size: 1px;
+      position: fixed;
+      left: 167px;
+      top: 10px;
+      z-index: 1;
+    }
+
+    .menu {
+      background-image: url("threeLine.svg");
+    }
+
+
+    .circle {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: (250, 249, 249);
+      text-align: center;
+    }
+
+    .box9 {
+      position: fixed;
+      right: 176px;
+      top: 10px;
+      line-height: 48px;
+    }
+
+    .dot3 {
+      position: fixed;
+      right: 125px;
+      top: 10px;
+      line-height: 48px;
+    }
+
+    .login {
+      width: 71px;
+      height: 40px;
+      border: 1px solid rgb(0, 102, 255);
+      border-radius: 2px;
+      position: fixed;
+      right: 35px;
+      top: 10px;
+      text-align: right;
+      padding-right: 11px;
+      line-height: 40px;
+      text-decoration: none;
+      font-size: 14px;
+      color: rgb(0, 102, 255);
+    }
+
+    .loginIcon {
+      width: 32px;
+      height: 32px;
+      position: fixed;
+      right: 80px;
+      top: 10px;
+      text-align: center;
+      line-height: 51px;
+    }
+
+
+
+    a {
+      text-decoration: none;
+    }
+
+    li a {
+      color: black;
+    }
+
+    li:active {
+      color: white;
+      background: black;
+      border: 1px solid black;
+    }
+
+    li:active a {
+      color: white;
+    }
+
+    a[class~="circle"]:active {
+      background: rgb(222, 222, 222);
+      border: 1px solid rgb(222, 221, 221);
+    }
+
+    .CF {
+      box-sizing: border-box;
+      width: 100%;
+      height: 260px;
+      background: black;
+      color: white;
+      position: relative;
+      padding-top: 60px;
+      padding-left: 30px;
+      font-size: 24px;
+      left: 0px;
+      top: 115px;
+      margin-bottom: 160px;
+    }
+
+    .CfLogo {
+      width: 320px;
+      height: 24px;
+      position: relative;
+      left: 0px;
+      top: -65px;
+    }
+
+    .CfLink {
+      width: 70px;
+      display: block;
+      color: white;
+      font-size: 14px;
+      border: 1px solid white;
+      padding: 10px;
+      text-align: center;
+      position: relative;
+      top: 70px;
+    }
+
+    .x {
+      width: 15px;
+      height: 15px;
+      background: rgb(171, 170, 170);
+      position: absolute;
+      padding: 5px;
+      text-align: center;
+      line-height: 0px;
+      right: 240px;
+      top: 10px;
+    }
+
+    nav {
+      width: 250px;
+      height: 90%;
+      background: white;
+      position: fixed;
+      margin-top: 56px;
+      padding-top: 10px;
+      left: 0;
+      top: 0;
+      z-index: 1;
+      overflow-y: scroll;
+    }
+
+    .nav0 {
+      box-sizing: border-box;
+      width: 225px;
+      height: 40px;
+      background: white;
+      color: black;
+      font-size: 14px;
+      padding-left: 50px;
+      line-height: 40px;
+      display: block;
+    }
+
+
+    .i1 {
+      width: 25px;
+      height: 25px;
+      position: relative;
+      top: 8px;
+      left: -23px;
+    }
+
+    .i2 {
+      width: 25px;
+      height: 25px;
+      position: relative;
+      top: 8px;
+      left: -23px;
+      border-radius: 50%;
+    }
+
+    .hr2 {
+      border: 0.5px solid rgb(239, 238, 238);
+      width: 225px;
+      display: block;
+      margin-right: 15px;
+      margin-top: 10px;
+    }
+
+    .hr3 {
+      border: 0.5px solid rgb(239, 238, 238);
+      width: 225px;
+      display: block;
+      margin-right: 15px;
+      margin-top: 10px;
+    }
+
+    .hr4 {
+      border: 0.5px solid rgb(239, 238, 238);
+      width: 225px;
+      display: block;
+      margin-right: 15px;
+      margin-top: -30px;
+    }
+
+
+    .navp {
+      width: 200px;
+      height: 40px;
+      word-break: break-all;
+      letter-spacing: -1.5px;
+      position: relative;
+      top: 5px;
+      left: 30px;
+    }
+
+    .login2 {
+      width: 73px;
+      height: 35px;
+      border: 1px solid rgb(0, 102, 255);
+      border-radius: 2px;
+      display: block;
+      text-align: right;
+      padding-right: 11px;
+      line-height: 35px;
+      text-decoration: none;
+      font-size: 14px;
+      color: rgb(0, 102, 255);
+      margin-top: 20px;
+      margin-left: 30px;
+    }
+
+    .loginIcon2 {
+      width: 32px;
+      height: 32px;
+      position: relative;
+      left: 45px;
+      top: -37px;
+      text-align: center;
+      line-height: 48px;
+    }
+
+    .nav0:hover {
+      background: rgb(222, 222, 222);
+      border: 1px solid rgb(222, 221, 221);
+    }
+
+    .navp2 {
+      width: 200px;
+      height: 40px;
+      word-break: break-all;
+      position: relative;
+      top: 8px;
+      left: 30px;
+      color: rgb(89, 89, 89);
+    }
+
+    .navp3 {
+      width: 200px;
+      height: 40px;
+      font-size: 14px;
+      word-break: break-all;
+      position: relative;
+      top: 8px;
+      left: 30px;
+      color: rgb(89, 89, 89);
+    }
+
+    footer {
+      width: 200px;
+      height: 40px;
+      font-size: 10px;
+      word-break: break-all;
+      position: relative;
+      top: 80px;
+      left: 30px;
+      color: rgb(113, 112, 112);
+    }
+
+    main {
+      width: 100%;
+      height: 100%;
+      position: fixed;
+      margin-left: 235px;
+      background: white;
+      overflow-y: scroll;
+    }
+
+    .video {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      margin-left: 20px;
+      font-size: 0;
+    }
+
+    .box1 {
+      width: 310px;
+      margin: 3px;
+      padding: 5px;
+      float: left;
+    }
+
+    .img1 {
+      width: 100%;
+      height: 170px;
+      margin-bottom: -10px;
+      cursor: pointer;
+    }
+
+    .img2 {
+      width: 40px;
+      margin-bottom: 50px;
+      margin-top: 10px;
+      padding: 10px;
+      border-radius: 50%;
+      float: left;
+      cursor: pointer;
+    }
+
+
+    p {
+      font-size: 16px;
+      word-break: break-all;
+      margin-top: 20px;
+    }
+
+    .p1 {
+      color: rgb(109, 109, 109);
+      font-size: 14px;
+      word-break: break-all;
+      margin-bottom: 50px;
+    }
+
+    .box2 {
+      width: 310px;
+      margin: 3px;
+      padding: 5px;
+      display: inline-block;
+      font-size: 1rem;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="YTlogo">
+      <a href="#" class="logo"><img src="./image/YT-logo.svg" title="YouTube 首頁"></a>
+      <a href="#" class="circle threeLine"><img src="./image/threeLine.svg" width="25px" alt=""></a>
+      <a href="#" class="TW">TW</a>
+    </div>
+    <nav>
+      <a href="#" class="nav0"><img src="./image/Icon1.svg" title="首頁" class="i1">首頁</a>
+      <a href="#" class="nav0"><img src="./image/Icon3.svg" title="探索" class="i1">探索</a>
+      <a href="#" class="nav0"><img src="./image/Icon4.svg" title="訂閱內容" class="i1">訂閱內容</a>
+      <hr class="hr2">
+      <a href="#" class="nav0"><img src="./image/Icon5.svg" title="媒體庫" class="i1">媒體庫</a>
+      <a href="#" class="nav0"><img src="./image/Icon6.svg" title="觀看紀錄" class="i1">觀看紀錄</a>
+      <hr class="hr3">
+      <div class="navp">登入帳戶即可對影片表示喜歡、發布留言及訂閱頻道。</div>
+      <a href="#" class="login2"> 登入</a>
+      <a href="#" class="loginIcon2"><img src="./image/login.svg" width="25px"> </a>
+      <hr class="hr4">
+      <div class="navp2">YOUTUBE 精選</div>
+      <a href="#" class="nav0"><img src="./image/icon7.jpg" title="音樂" class="i2">音樂</a>
+      <a href="#" class="nav0"><img src="./image/icon8.jpg" title="體育" class="i2">體育</a>
+      <a href="#" class="nav0"><img src="./image/icon9.jpg" title="遊戲" class="i2">遊戲</a>
+      <a href="#" class="nav0"><img src="./image/icon10.jpg" title="電影" class="i2">電影</a>
+      <a href="#" class="nav0"><img src="./image/icon11.jpg" title="新聞" class="i2">新聞</a>
+      <a href="#" class="nav0"><img src="./image/icon12.jpg" title="直播" class="i2">直播</a>
+      <a href="#" class="nav0"><img src="./image/icon13.jpg" title="360 度影片" class="i2">360 度影片</a>
+      <hr class="hr3">
+      <a href="#" class="nav0"><img src="./image/Icon14.svg" title="瀏覽頻道" class="i1">瀏覽頻道</a>
+      <hr class="hr3">
+      <div class="navp2">更多 YOUTUBE 功能</div>
+      <a href="#" class="nav0"><img src="./image/Icon15.svg" title="YouTube Premium" class="i1">YouTube Premium</a>
+      <a href="#" class="nav0"><img src="./image/Icon16.svg" title="直播" class="i1">直播</a>
+      <hr class="hr3">
+      <a href="#" class="nav0"><img src="./image/Icon17.svg" title="設定" class="i1">設定</a>
+      <a href="#" class="nav0"><img src="./image/Icon18.svg" title="檢舉紀錄" class="i1">檢舉紀錄</a>
+      <a href="#" class="nav0"><img src="./image/Icon19.svg" title="說明" class="i1">說明</a>
+      <a href="#" class="nav0"><img src="./image/Icon20.svg" title="提供意見" class="i1">提供意見</a>
+      <div class="navp3">
+        簡介 媒體 版權 與我們聯絡<br>
+        創作者 廣告 開發人員<br>
+        <br>
+        條款 隱私權 政策與安全性<br>
+        YouTube運作方式 測試新功能
+      </div>
+      <footer>&copy; 2021 Google LLC </footer>
+    </nav>
+
+
+    <main>
+      <div class="search">
+        <div class="insearch1">
+          <input type="text" class="input" placeholder=" 搜尋">
+          <a href="#" class="magnifier"><img src="./image/magnifier.svg" width="25px" hight="25px" title="搜尋"></a>
+          <a href="#" class="circle mic"><img src="./image/mic.svg" width="24px" title="使用語音搜尋"></a>
+        </div>
+        <a href="#" class="circle box9"><img src="./image/box9.svg" width="25px" title="YouTube 應用程式"></a>
+        <a href="#" class="circle dot3"><img src="./image/dot3.svg" width="25px" title="設定"></a>
+        <a href="#" class="login"> 登入</a>
+        <a href="#" class="loginIcon"><img src="./image/login.svg" width="25px"> </a>
+      </div>
+      <div class="search2">
+        <ul>
+          <li><a href="#">全部</a></li>
+          <li><a href="#">直播中</a></li>
+          <li><a href="#">音樂</a></li>
+          <li><a href="#">卡通</a></li>
+          <li><a href="#">自然</a></li>
+          <li><a href="#">觀光</a></li>
+          <li><a href="#">最新上傳</a></li>
+        </ul>
+      </div>
+      <div class=" CF">探索專屬你獨特風格的音樂
+        <div class="CfLogo"><img src="./image/YtMusic.png" width="380px" height="28px" alt=""></div>
+        <a href class="CfLink">立即訂閱</a>
+        <a href class="x"><img src="./image/X.svg" width="16px" height="16px" alt=""></a>
+      </div>
+      <div class="video">
+        <div class="box1">
+          <img src="./image/01.jpg" class="img1">
+          <img src="./image/unnamed (5).jpg" class="img2">
+          <p style="margin-bottom: -15px;">(여자)아이들((G)I-DLE) - LoL K/DA 'POP/STARS' Project...</p>
+          <p class="p1">United CUBE (CUBE Entertainment ...<br>
+            觀看次數：822萬次．2年前
+        </div>
+        <div class="box1">
+          <img src="./image/02.jpg" class="img1">
+          <img src="./image/channels4_profile.jpg" class="img2">
+          <p style="margin-bottom: -15px;">向经典致敬，獭去1900，旱獭音乐系列 #joyce的玩具箱...</p>
+          <p class="p1">Joyce的玩具箱<br>
+            觀看次數：365次．4天前
+        </div>
+        <div class="box1">
+          <img src="./image/03.jpg" class="img1">
+          <img src="./image/unnamed.jpg" class="img2">
+          <p style="margin-bottom: -15px;">【獻給這屆戴口罩畢業的你！ 全國高中生溫暖合唱網聽哭】</p>
+          <p class="p1">台灣達人秀<br>
+            觀看次數：14萬次．3天前
+        </div>
+        <div class="box1">
+          <img src="./image/04.jpg" class="img1">
+          <img src="./image/unnamed (1).jpg" class="img2">
+          <p style="margin-bottom: -15px;">【小白】韩国最新大逃杀！456位屌丝参加生死游戏，456亿...</p>
+          <p class="p1">小白瞅电影YouTube官方号<br>
+            觀看次數：32萬次．5天前
+        </div>
+        <div class="box2">
+          <img src="./image/05.jpg" class="img1">
+          <img src="./image/unnamed (3).jpg" class="img2">
+          <p style="margin-bottom: -15px;">K/DA - MORE Dance - Official Choreography Video | Lea...</p>
+          <p class="p1">TheKinjaz<br>
+            觀看次數：147萬次．10個月前
+        </div>
+        <div class="box2">
+          <img src="./image/06.jpg" class="img1">
+          <img src="./image/unnamed (2).jpg" class="img2">
+          <p style="margin-bottom: -15px;">【千千進食中】一口要價600塊？！燕窩魚子醬內餡，奢華...</p>
+          <p class="p1">千千進食中<br>
+            觀看次數：36萬次．6天前
+        </div>
+        <div class="box2">
+          <img src="./image/07.jpg" class="img1">
+          <img src="./image/unnamed (4).jpg" class="img2">
+          <p style="margin-bottom: -15px;">[NO ADS!] BTS study and productivity playlist/ long playl...</p>
+          <p class="p1">NickyKishi's Playlist<br>
+            觀看次數：118萬次．6個月前
+        </div>
+        <div class="box2">
+          <img src="./image/08.jpg" class="img1">
+          <img src="./image/unnamed (4).jpg" class="img2">
+          <p style="margin-bottom: -15px;">《哈哈台地區的街訪》EP28 - 上班時間的「宜蘭縣」閒人！...</p>
+          <p class="p1">HahaTai 哈哈台<br>
+            觀看次數：556,835次．1週前
+        </div>
+        <div class="box1">
+          <img src="./image/01.jpg" class="img1">
+          <img src="./image/unnamed (5).jpg" class="img2">
+          <p style="margin-bottom: -15px;">(여자)아이들((G)I-DLE) - LoL K/DA 'POP/STARS' Project...</p>
+          <p class="p1">United CUBE (CUBE Entertainment ...<br>
+            觀看次數：822萬次．2年前
+        </div>
+        <div class="box1">
+          <img src="./image/02.jpg" class="img1">
+          <img src="./image/channels4_profile.jpg" class="img2">
+          <p style="margin-bottom: -15px;">向经典致敬，獭去1900，旱獭音乐系列 #joyce的玩具箱...</p>
+          <p class="p1">Joyce的玩具箱<br>
+            觀看次數：365次．4天前
+        </div>
+        <div class="box1">
+          <img src="./image/03.jpg" class="img1">
+          <img src="./image/unnamed.jpg" class="img2">
+          <p style="margin-bottom: -15px;">【獻給這屆戴口罩畢業的你！ 全國高中生溫暖合唱網聽哭】</p>
+          <p class="p1">台灣達人秀<br>
+            觀看次數：14萬次．3天前
+        </div>
+        <div class="box1">
+          <img src="./image/04.jpg" class="img1">
+          <img src="./image/unnamed (1).jpg" class="img2">
+          <p style="margin-bottom: -15px;">【小白】韩国最新大逃杀！456位屌丝参加生死游戏，456亿...</p>
+          <p class="p1">小白瞅电影YouTube官方号<br>
+            觀看次數：32萬次．5天前
+        </div>
+        <div class="box2">
+          <img src="./image/05.jpg" class="img1">
+          <img src="./image/unnamed (3).jpg" class="img2">
+          <p style="margin-bottom: -15px;">K/DA - MORE Dance - Official Choreography Video | Lea...</p>
+          <p class="p1">TheKinjaz<br>
+            觀看次數：147萬次．10個月前
+        </div>
+        <div class="box2">
+          <img src="./image/06.jpg" class="img1">
+          <img src="./image/unnamed (2).jpg" class="img2">
+          <p style="margin-bottom: -15px;">【千千進食中】一口要價600塊？！燕窩魚子醬內餡，奢華...</p>
+          <p class="p1">千千進食中<br>
+            觀看次數：36萬次．6天前
+        </div>
+        <div class="box2">
+          <img src="./image/07.jpg" class="img1">
+          <img src="./image/unnamed (4).jpg" class="img2">
+          <p style="margin-bottom: -15px;">[NO ADS!] BTS study and productivity playlist/ long playl...</p>
+          <p class="p1">NickyKishi's Playlist<br>
+            觀看次數：118萬次．6個月前
+        </div>
+        <div class="box2">
+          <img src="./image/08.jpg" class="img1">
+          <img src="./image/unnamed (4).jpg" class="img2">
+          <p style="margin-bottom: -15px;">《哈哈台地區的街訪》EP28 - 上班時間的「宜蘭縣」閒人！...</p>
+          <p class="p1">HahaTai 哈哈台<br>
+            觀看次數：556,835次．1週前
+        </div>
+      </div>
+    </main>
+</body>
+
+</html>
